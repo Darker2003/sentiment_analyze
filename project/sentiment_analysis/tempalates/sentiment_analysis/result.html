@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Feedback Analysis Result</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_result.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="neon-text">Sentiment Analysis Result</h1>
+        <p>Text: {{ text }}</p>
+        <p>Sentiment: {{ sentiment }}</p>
+        
+        {% if sentiment == "Positive" %}
+            <img src="{% static 'images/happy3.gif' %}"  class="gif-animation">
+        {% elif sentiment == "Negative" %}
+            <img src="{% static 'images/boring3.gif' %}"  class="gif-animation">
+        {% else %}
+            <p class="neon-text">Unable to determine sentiment.</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>

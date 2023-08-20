@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Feedback Analysis</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_analyze.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="neon-text">Sentiment Feedback Analysis</h1>
+        <form method="post" action="{% url 'analyze_sentiment' %}">
+            {% csrf_token %}
+            <label for="text" class="neon-text">Enter Feedback:</label><br>
+            <textarea id="text" name="text" rows="4" cols="50"></textarea><br><br>
+            <input type="submit" value="Analyze" class="submit">
+        </form>
+    </div>
+</body>
+</html>
